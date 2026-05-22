@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevSecGuard | Local Developer Security Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="glow-container">
+    <div class="glow-spot glow-blue"></div>
+    <div class="glow-spot glow-purple"></div>
+  </div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-logo">
+        <span class="shield-icon">🛡️</span>
+        <div class="logo-text">
+          <h1>DevSecGuard</h1>
+          <p>100% Local Supply-Chain & Wiper Protection</p>
+        </div>
+      </div>
+      <div class="header-badge">
+        <span class="pulse-indicator"></span>
+        <span id="connection-status">Host Environment: Secure</span>
+      </div>
+    </header>
+
+    <main class="dashboard-grid">
+      <!-- CONTROL CARD -->
+      <section class="card control-card">
+        <h2>Scan Settings</h2>
+        <p class="subtitle">Set your workspace directory path to inspect configurations and settings.</p>
+        
+        <div class="input-group">
+          <label for="scan-path">Target Scan Path</label>
+          <div class="path-input-wrapper">
+            <input type="text" id="scan-path" placeholder="C:\Users\username\projects\my-app" autocomplete="off">
+            <button id="btn-browse" class="btn-secondary" title="Use current working directory">Reset Path</button>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="btn-scan" class="btn-primary">
+            <span class="btn-icon">🔍</span> Safe Scan & Audit
+          </button>
+          <button id="btn-clean" class="btn-danger">
+            <span class="btn-icon">⚡</span> Active Eradication
+          </button>
+        </div>
+
+        <div class="critical-warning">
+          <p><strong>⚠️ Critical Security Sequence Note:</strong> If you are infected, <strong>do not</strong> revoke your GitHub or NPM tokens until you run <em>Active Eradication</em> to kill the local background daemon. Doing so beforehand will trigger the wiper dead-man's switch.</p>
+        </div>
+      </section>
+
+      <!-- STATUS METER CARD -->
+      <section class="card status-card">
+        <h2>System Threat Index</h2>
+        <p class="subtitle">Real-time status of Mini Shai-Hulud infection signatures.</p>
+
+        <div class="meters-container">
+          <div class="meter-item">
+            <div class="meter-meta">
+              <span class="meter-label">Wiper Daemon Process</span>
+              <span id="status-process" class="status-badge status-good">Checked</span>
+            </div>
+            <div class="meter-bar"><div id="bar-process" class="bar-fill fill-good" style="width: 100%"></div></div>
+          </div>
+
+          <div class="meter-item">
+            <div class="meter-meta">
+              <span class="meter-label">System Persistence (Task/Registry)</span>
+              <span id="status-persistence" class="status-badge status-good">Checked</span>
+            </div>
+            <div class="meter-bar"><div id="bar-persistence" class="bar-fill fill-good" style="width: 100%"></div></div>
+          </div>
+
+          <div class="meter-item">
+            <div class="meter-meta">
+              <span class="meter-label">IDE Config Hooks (VS Code/Claude)</span>
+              <span id="status-ide" class="status-badge status-good">Checked</span>
+            </div>
+            <div class="meter-bar"><div id="bar-ide" class="bar-fill fill-good" style="width: 100%"></div></div>
+          </div>
+
+          <div class="meter-item">
+            <div class="meter-meta">
+              <span class="meter-label">Malware File Artifacts</span>
+              <span id="status-files" class="status-badge status-good">Checked</span>
+            </div>
+            <div class="meter-bar"><div id="bar-files" class="bar-fill fill-good" style="width: 100%"></div></div>
+          </div>
+        </div>
+
+        <div class="health-summary">
+          <span class="summary-label">Workstation Security Status:</span>
+          <span id="overall-status" class="overall-badge status-good">Awaiting Scan</span>
+        </div>
+      </section>
+
+      <!-- CONSOLE LOG CARD -->
+      <section class="card console-card">
+        <div class="console-header">
+          <h2>Security Log Console</h2>
+          <button id="btn-clear-console" class="btn-text">Clear Console</button>
+        </div>
+        <div class="console-body" id="console-output">
+          <div class="console-line system">[System] DevSecGuard Dashboard loaded. Bounded to 127.0.0.1.</div>
+          <div class="console-line system">[System] Ready to scan workspace. Click 'Safe Scan & Audit' to begin.</div>
+        </div>
+      </section>
+
+      <!-- RECOMMENDATIONS CARD -->
+      <section class="card info-card">
+        <h2>Post-Audit Remediation Steps</h2>
+        <div class="info-steps">
+          <div class="step-card" id="rec-step-1">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Dismantle Local Threat</h3>
+              <p>Run <strong>Active Eradication</strong> if threats are found. This stops the wiper daemon and deletes all local persistence hooks.</p>
+            </div>
+          </div>
+          <div class="step-card" id="rec-step-2">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Confirm Disarmed Status</h3>
+              <p>Verify that your <em>System Threat Index</em> goes 100% green and no further threats are found in the console logs.</p>
+            </div>
+          </div>
+          <div class="step-card" id="rec-step-3">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Rotate Credentials Safely</h3>
+              <p>Once local files are deleted, immediately revoke and recreate your GitHub PATs, NPM publishing keys, and AWS credentials.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>DevSecGuard is a 100% local, open-source security tool. License: MIT. Running on Windows 11.</p>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

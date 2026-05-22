@@ -1,0 +1,22 @@
+{
+  "name": "devsecguard",
+  "version": "1.0.0",
+  "description": "100% Local Security Utility for detecting, disabling, and eradicating the Mini Shai-Hulud malware and developer environment persistence hooks.",
+  "main": "src/remediator.js",
+  "type": "module",
+  "scripts": {
+    "scan": "node src/remediator.js --dry-run",
+    "clean": "node src/remediator.js --clean",
+    "dashboard": "node src/server.js"
+  },
+  "keywords": [
+    "security",
+    "malware-remediation",
+    "wiper-prevention",
+    "vscode-security",
+    "dependency-check"
+  ],
+  "author": "Antigravity & User",
+  "license": "MIT",
+  "dependencies": {}
+}
