@@ -2,6 +2,8 @@
 
 DevSecGuard is a **100% local, zero-dependency, open-source security tool** designed for Windows 11. It protects developers from supply-chain malware like **"Mini Shai-Hulud"**, which injects persistent execution hooks into developer workspaces and features a dead-man's switch wiper.
 
+![DevSecGuard Dashboard](public/dashboard_preview.png)
+
 ## ⚠️ CRITICAL SAFETY WARNING
 **DO NOT REVOKE ANY COMPROMISED GITHUB OR NPM TOKENS YET.**
 The malware installs a local background daemon process (`gh-token-monitor`) that checks if your credentials are valid. If you revoke the token, the daemon receives a `401 Unauthorized` and immediately triggers a wiper command (such as deleting all files in your user home directory).
